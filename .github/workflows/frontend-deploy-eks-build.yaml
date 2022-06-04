@@ -1,5 +1,5 @@
 
-name: Build Front
+name: ECR Build For EKS nessa cluster
 
 on:
   push:
@@ -79,7 +79,7 @@ jobs:
       - name: Image Tag Change
         uses: mikefarah/yq@v4.9.6
         with:
-          cmd: yq e --inplace '.spec.containers[0].image = "684231376422.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend:${{ env.IMAGE_TAG }}"' frontend/frontend-deployment.yaml
+          cmd: yq e --inplace '.spec.template.spec.containers[0].image = "684231376422.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend:${{ env.IMAGE_TAG }}"' frontend/frontend-deployment.yaml
 
       - name: Yaml Check
         run: |
@@ -95,8 +95,6 @@ jobs:
           title: '[Deploy] eks-nessa-frontend'
           body: |
             # Deploy Order To nessa cluster
-            ## Stage
-            - *alpha*
             ## Git Hash
             - *${{ env.HASH }}*
             ## Docker Image
