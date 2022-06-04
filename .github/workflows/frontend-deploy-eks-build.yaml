@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_TAG: ${{ needs.build.outputs.image_tag }}
-      GIT_ACCESS_TOKEN: ${{ secrets.ACTION_ACCESS_TOKEN }}
+      GIT_ACCESS_TOKEN: ${{ secrets.ACTION_TOKEN }}
       HASH: ${{ needs.build.outputs.sha }}
 
     steps:
