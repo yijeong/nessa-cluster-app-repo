@@ -30,7 +30,7 @@ function UpperPage() {
     const classes = useStyles();
     const [ data, setState ] = useState({outcome:[]})
     
-    const url = 'http://k8s-default-backendi-50ceedecab-2094164715.ap-northeast-2.elb.amazonaws.com/services/all'
+    const url = 'http://k8s-default-backendi-50ceedecab-679597136.ap-northeast-2.elb.amazonaws.com/services/all'
     
     useEffect(() => {
       const fetchData = async () => {

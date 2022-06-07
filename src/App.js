@@ -41,7 +41,7 @@ function App(props) {
   const [query, setQuery] = useState('aws');
   const [search, setSearch] = useState('aws');
 
-  var url = `http://k8s-default-backendi-50ceedecab-2094164715.ap-northeast-2.elb.amazonaws.com/contents/${search}`
+  var url = `http://k8s-default-backendi-50ceedecab-679597136.ap-northeast-2.elb.amazonaws.com/contents/${search}`
 
   useEffect(() => {
     const fetchData = async () => {
